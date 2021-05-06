@@ -1,0 +1,109 @@
+.btn {
+    padding: 0.5em 1em ;
+    
+}
+
+.btn-round-edges {
+    border-radius: 1em;
+    padding: 0.5em 1.5em ;
+   
+}
+
+.link-btn{
+    text-decoration:none;
+    border: 1px solid;
+    color:black;
+    padding:0.5em;
+}
+
+.btn-text{
+    padding: 0.5em 1em ;
+   
+    border:none;    
+    letter-spacing: 1px;
+    font-weight:700;
+}
+
+
+/*
+***************************************************
+CSS Button Classes for size Large & Small
+***************************************************
+*/
+
+.btn-size-largest{
+    padding: 0.5em 1em ;
+   
+    font-size:x-large;
+}
+.btn-size-large{
+    padding: 0.5em 1em ;
+    
+    font-size:large;
+}
+
+.btn-size-small{
+ padding: 0.5em 1em ;
+ 
+ font-size:x-small;
+}
+
+/*
+***************************************************
+CSS ICON Button Classes for size Large & Small
+***************************************************
+*/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/**/
+.position-along{
+    position:relative;
+    top:0.30em;  
+    margin: 0 0 0 0.35em;
+   
+}
+.btn-icon,
+.btn-floating-action-bottom-right,
+.btn-floating-action-bottom-left,
+.btn-floating-action-top-right,
+.btn-floating-action-top-left
+{
+    padding:0.5em;
+    margin:0.5em;  
+    width:fit-content;
+    height:fit-content;
+    background-color: transparent;
+    border:none;
+}
+
+.btn-floating-action-bottom-right{
+    position:fixed;    
+    bottom:7em;
+    right:10em;
+    z-index:9999;   
+}
+.btn-floating-action-bottom-left{
+    position:fixed;    
+    bottom:7em;
+    left:10em;
+    z-index:9999;   
+}
+.btn-floating-action-top-right{
+    position:fixed;    
+    top:7em;
+    right:10em;
+    z-index:9999;   
+}
+.btn-floating-action-top-left{
+    position:fixed;    
+    top:7em;
+    left:10em;
+    z-index:9999;   
+}
+.btn-style-color{
+    color:var(--primary-color);
+    background-color: var(--secondary-color);
+}
