@@ -96,13 +96,15 @@ flex-direction: column;
 .card-remove-btn{    
     width:fit-content;
     height:fit-content;
-    border-radius:100%;
+    border-radius:1rem;;
     background-color: transparent;
-    font-size:14px;
-    border: 2px solid black;
+    font-size:18px;
+    border: 2px solid var(--secondary-color);
     color:var(--secondary-color);
-    margin:0.2em;
+    margin:0.3em;
     z-index:99;
+    position: relative;
+    left:9.5rem;
     
 }
 .card-remove-btn:hover{

@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import "../../styles/nav.css";
 function Navigation(){
 
@@ -7,13 +7,16 @@ function Navigation(){
                             <h1>🌼Udyaan Bazaar🌼</h1>
                             <ul class="list-non-bullet nav-pills">
                                 <li class="list-item-inline">
-                                    <Link to="/" class="link" ><span class="material-icons md-24">home</span></Link>
+                                    <NavLink to="/" class="link" ><span class="material-icons md-24">home</span></NavLink>
                                 </li>
                                 <li class="list-item-inline">
-                                    <Link to="/favorites" class="link"><span class="material-icons">favorite</span></Link>
+                                    <NavLink to="/productlist" class="link"><span class="material-icons-outlined">inventory_2</span></NavLink>
                                 </li>
                                 <li class="list-item-inline">
-                                    <Link to="/cart" class="link"><span class="material-icons">shopping_cart</span></Link>
+                                    <NavLink to="/wishlistpage" class="link"><span class="material-icons">favorite</span></NavLink>
+                                </li>
+                                <li class="list-item-inline">
+                                    <NavLink to="/cartpage" class="link"><span class="material-icons">shopping_cart</span></NavLink>
                                 </li>
 
                             </ul>

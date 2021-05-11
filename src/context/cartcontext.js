@@ -1,19 +1,28 @@
-import {createContext, useContext, useReducer} from "react";
+import {createContext, useContext, useReducer, useState} from "react";
+import { ADD_TO_CART,
+    REMOVE_FROM_CART,
+    ADD_TO_WISHLIST,
+    REMOVE_FROM_WISHLIST,
+    INCREMENT_ITEM_QUANTITY,
+    DECREMENT_ITEM_QUANTITY } from "../constants/constants";
+
 
 export const CartContext=createContext();
 
 export const wishList=[];
 export const cart=[];
 
-function getTotalCheckOutPrice(acc,value){
-    return {totalSum:acc.sum+value.price*value.quantity}
-}
-function CartContextProvider({children}){
-    const totalCheckoutAmount=state.cart.reduce(getTotalCheckOutPrice,{totalSum:0});
 
-    const [state,dispatch]=useReducer(cartReducer,{wishList,cart, totalCheckoutAmount});
+ export function CartContextProvider({children}){
+   
+    
+    const [state,dispatch]=useReducer(cartReducer,{wishList,cart});
+
+    
+
+
     return(
-        <CartContext.Provider value={{wishList:state.wishList,cart:state.cart,dispatch, totalCheckoutAmount}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{state,dispatch}}>{children}</CartContext.Provider>
     );
 }
 
@@ -21,19 +30,33 @@ export function useCartContext(){
     return useContext(CartContext);
 }
 
-export default CartContextProvider;
 
 function cartReducer(state,action){
 
     switch(action.type){
 
-        case "ADD_TO_CART":
+        case ADD_TO_CART:
             return{
-                wishList: state.wishList,
-                cart: state.cart.concat(action.item)
+                ...state,
+                cart: state.cart.concat(action.item),
             }
-            break;
+        case REMOVE_FROM_CART:
+            return{
+                ...state,
+                cart:state.cart.filter((item)=>item.id!== action.item.id),
+            }
+        case ADD_TO_WISHLIST:
+            return{
+                ...state,
+                wishList: state.wishList.concat(action.item),
+            }
+        case REMOVE_FROM_WISHLIST:
+            return{
+                ...state,
+                wishList:state.wishList.filter((item)=>item.id!==action.item.id),
+            }
+        // case INCREMENT_ITEM_QUANTITY:
             default:
-              return;
+              return state;
     }
 }

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
-import CartContextProvider from "../src/context/cartcontext";
+import {CartContextProvider} from "./context/cartcontext";
 
 ReactDOM.render(
   <React.StrictMode>
