@@ -11,13 +11,17 @@ export const CartContext=createContext();
 
 export const wishList=[];
 export const cart=[];
+export const grandTotalValue=0;
 
 
  export function CartContextProvider({children}){
    
     
-    const [state,dispatch]=useReducer(cartReducer,{wishList,cart});
+   
+    
+    const [state,dispatch]=useReducer(cartReducer,{wishList,cart,grandTotalValue});
 
+    
     
 
 

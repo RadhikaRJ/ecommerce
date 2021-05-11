@@ -1,0 +1,13 @@
+.cart-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cart-items-section{
+    border: 1px solid var(--secondary-color);
+}
+.cart-summary-section{
+    border: 1px solid var(--secondary-color);
+    padding:1rem;
+}
