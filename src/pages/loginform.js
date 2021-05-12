@@ -2,7 +2,7 @@
 import "../styles/input.css";
 import "../styles/button.css";
 
-import {useNavigate,Redirect} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import { useAuth,userCredentials } from "../context/authcontext";
 
@@ -23,6 +23,8 @@ function Loginform(){
 
 
     const {state,dispatch}=useAuth();
+
+    
     return(<div classname="userLoginForm-container apply-shadow">
         <div>
            
@@ -46,6 +48,7 @@ function Loginform(){
                     if(credentialVerification(userCred.username,userCred.password)){
                         dispatch({type:"VALID_CREDENTIALS"});
                         dispatch({type:"LOG_IN"});
+                        navigate("/checkout",{replace:true})
                         
                     }
                     if(!credentialVerification(userCred.username,userCred.password)){
