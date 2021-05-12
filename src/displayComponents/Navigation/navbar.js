@@ -18,6 +18,9 @@ function Navigation(){
                                 <li class="list-item-inline">
                                     <NavLink to="/cartpage" class="link"><span class="material-icons">shopping_cart</span></NavLink>
                                 </li>
+                                <li class="list-item-inline">
+                                    <NavLink to="/loginpage" class="link"><span class="material-icons">login</span></NavLink>
+                                </li>
 
                             </ul>
                         </nav>

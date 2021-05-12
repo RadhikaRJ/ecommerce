@@ -9,6 +9,7 @@ import Homepage from './pages/homepage';
 import Cartdisplay from './pages/cartItemsPage';
 import WishListdisplay from './pages/wishlistedItemsPage';
 import PrivateRoute from './PrivateRoute';
+import Loginpage from './pages/login';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/cartpage" element={<Cartdisplay/>}/>
       <Route exact path="/wishlistpage" element={<WishListdisplay/>}/>
       <PrivateRoute exact path="/checkout" element={<Checkout/>}/>
+      <Route exact path="/loginpage" element={<Loginpage/>}/>
       </Routes>
     
      <Footer/>
