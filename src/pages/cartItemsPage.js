@@ -5,6 +5,7 @@ import "../styles/button.css";
 import { REMOVE_FROM_CART } from "../constants/constants";
 import CartSummary from "../displayComponents/cartSummary/cartSummary";
 import {useNavigate} from "react-router-dom";
+import ButtonQuantityUpdate from "../displayComponents/buttonQuantityUpdate/buttonQuantityUpdate";
 function Cartdisplay(){
 
     const {state,dispatch}=useCartContext();
@@ -40,8 +41,11 @@ function Cartdisplay(){
                                                         <div> 3 days minimum </div>
                                                             )}
                                                                     
+                                               <ButtonQuantityUpdate item={item}/>
                                                 
                                                 </div>
+                                                
+                                                
                                                 </div>
                                                 
                                             

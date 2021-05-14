@@ -59,7 +59,26 @@ function cartReducer(state,action){
                 ...state,
                 wishList:state.wishList.filter((item)=>item.id!==action.item.id),
             }
-        // case INCREMENT_ITEM_QUANTITY:
+        case INCREMENT_ITEM_QUANTITY:
+            return{
+                ...state,
+                cart:state.cart.map((item)=>{
+                    if(item.id === action.item.id){
+                        return {...item,quantity:action.item.quantity+1}
+                    }
+                    return item;
+                })
+            }
+        case DECREMENT_ITEM_QUANTITY:
+            return{
+                ...state,
+                cart:state.cart.map((item)=>{
+                    if(item.id === action.item.id){
+                        return {...item,quantity:action.item.quantity-1}
+                    }
+                    return item;
+                })
+            }
             default:
               return state;
     }

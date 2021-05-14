@@ -144,5 +144,6 @@ flex-direction: column;
 
 .product-item-display{
     margin:1rem;
+    display:flex;
     
 }
