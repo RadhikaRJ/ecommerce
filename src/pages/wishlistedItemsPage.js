@@ -25,7 +25,7 @@ function WishListdisplay(){
     state.wishList.map((item)=>{
         return(
             <div
-                className="product-item-display"
+                className="product-item-display "
                     key={item.id}
                     
                 >
