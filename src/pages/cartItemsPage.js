@@ -15,7 +15,7 @@ function Cartdisplay(){
            {state.cart.length!==0 && <h2>Your Cart</h2> || <h2>Your cart is empty</h2>}
            {state.cart.length!==0 && <button class="btn-text btn-style-color" onClick={()=>navigate("/checkout")}>Checkout</button> || <button class="btn-text btn-style-color" onClick={()=>navigate("/productlist")}>Go back to view products</button>}
             { state.cart.length!==0 && <div className="cart-container">
-            
+                <div></div>
                  <div className="product-display-list-container cart-items-section">       
                     {
                         state.cart.map((item)=>{

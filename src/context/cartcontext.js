@@ -4,7 +4,11 @@ import { ADD_TO_CART,
     ADD_TO_WISHLIST,
     REMOVE_FROM_WISHLIST,
     INCREMENT_ITEM_QUANTITY,
-    DECREMENT_ITEM_QUANTITY } from "../constants/constants";
+    DECREMENT_ITEM_QUANTITY,
+    TOGGLE_IN_STOCK,
+    TOGGLE_FAST_DELIVERY,
+    SET_PRICE_RANGE
+} from "../constants/constants";
 
 
 export const CartContext=createContext();

@@ -31,5 +31,7 @@ export const productData = [...Array(50)].map((item) => ({
     "advanced",
     "professional"
   ]),
-  color: faker.commerce.color()
+  color: faker.commerce.color(),
+  description: "This is a sample of product data that has description about the product that is being viewed in detail. Hope all the details are satidfactory for you to go ahead & purchase this product."
+  
 }));

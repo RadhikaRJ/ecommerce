@@ -5,6 +5,7 @@ import {useCartContext} from "../context/cartcontext";
 import { ADD_TO_CART } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import ButtonAddToWishList from "../displayComponents/wishListButton/wishListItem";
+import {Link} from "react-router-dom";
 function ProductList(){
 
     const {dispatch} = useCartContext();
@@ -12,17 +13,17 @@ function ProductList(){
         {
             productData.map((item)=>{
                 return(<div
-                className="product-item-display"
+                className="product-item-display "
                     key={item.id}
                     
                 >
-                   <div class="card-container">
+                   <div class="card-container ">
                        
-                        <div class="card-medium">
+                        <div class="card-large ">
                         <ButtonAddToWishList item={item}/> 
 
-                            <div class="card-content">
-                                <img class="image-card-size-medium" src={item.image} width="100%" height="auto" alt={item.productName}/>
+                            <div class="card-content ">
+                                <img class="image-card-size-large" src={item.image} width="100%" height="auto" alt={item.productName}/>
                                 <h3> {item.name} </h3>
                                 <div>Rs. {item.price}</div>
                                 {item.inStock && <div> In Stock </div>}
@@ -37,9 +38,10 @@ function ProductList(){
                             
                             </div>
                             </div>
-                            <div class="card-medium-showSimilar-section">
+                            <div class="card-large-showSimilar-section ">
                                    
-                                    <ButtonAddToCart item={item}/> 
+                                    <ButtonAddToCart item={item}/> <button class="btn-text btn-style-color ">
+                                    <Link  to={`/productlist/${item.id}`} class="btn-style-color link-btn">View Details</Link></button>
                             </div>
                         
                             

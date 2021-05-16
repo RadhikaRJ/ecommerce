@@ -6,7 +6,7 @@ function ButtonAddToCart({item}){
     const [inCartStatus,setInCartStatus]=useState(false);
     const {dispatch}=useCartContext();
     return(
-        <button class="btn-text btn-style-color" onClick={()=>{
+        <button class="btn-text btn-style-color btn" onClick={()=>{
                 dispatch({type:ADD_TO_CART,item});
                 setInCartStatus((inCartStatus)=>!inCartStatus);              
             }
