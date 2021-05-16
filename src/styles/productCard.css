@@ -48,7 +48,8 @@ flex-direction: column;
 .card-medium-showSimilar-section{
     width:180px;
     border:2px solid var(--secondary-color);
-    padding:0.5em  
+    padding:0.5em  ;
+    margin-bottom: 2rem;
 }
 .overlay-text-on-medium-card{
     position:absolute;
@@ -143,7 +144,7 @@ flex-direction: column;
 }
 
 .product-item-display{
-    margin:2.5rem 0.5rem;
+    margin:5rem 0.5rem;
     display:flex;
     padding:1rem;
     
