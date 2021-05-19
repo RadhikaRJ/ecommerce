@@ -1,26 +1,20 @@
-.filter-container{
-  
-    margin:1.5rem;
-    padding:1rem;
-   
+.filter-container {
+  margin: 1.5rem;
+  padding: 1rem;
 }
 
-
-.filter-main-section-containers{
-    display:flex;    
-    margin:1rem;
-    justify-content: space-around;
-    flex-wrap:wrap;
-
+.filter-main-section-containers {
+  display: flex;
+  margin: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.filter-sub-section-containers{
-  
-    margin:1rem;
-    padding:2rem;
+.filter-sub-section-containers {
+  margin: 1rem;
+  padding: 2rem;
 }
 
-.filter-input-section{
-    text-align: left;
+.filter-input-section {
+  text-align: left;
 }
-

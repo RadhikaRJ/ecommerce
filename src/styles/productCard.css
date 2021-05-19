@@ -1,189 +1,168 @@
-.card-container{
-    /* Change the width & remove card-showSimilat-section div if not needed */
-margin:0 auto;
-height:350px;
-display:flex;
-flex-direction: column;
-
+.card-container {
+  /* Change the width & remove card-showSimilat-section div if not needed */
+  margin: 0 auto;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-small{
-    /*  set width roughly same as width of image */
-    width:110px;   
-    border: 2px solid var(--secondary-color);
-    padding:0.5em;
-    display: flex;
-    flex-direction: column;
-   
-   
+.card-small {
+  /*  set width roughly same as width of image */
+  width: 110px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
-.image-card-size-small{   
-    width:100px;  
+.image-card-size-small {
+  width: 100px;
 }
-.card-small-showSimilar-section{
-    width:110px;
-    border:2px solid var(--secondary-color);
-    padding:0.5em ;
+.card-small-showSimilar-section {
+  width: 110px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
 }
-.overlay-text-on-small-card{
-    position:absolute;
-    /* use top bottom left right as per requirement */
-    width:100px;;   
+.overlay-text-on-small-card {
+  position: absolute;
+  /* use top bottom left right as per requirement */
+  width: 100px;
 }
 /**********************************/
-.card-medium{
-    /*  set width roughly same as width of image */
-    width:180px;    
-    border: 2px solid var(--secondary-color);
-    padding:0.5em;
-    display: flex;
-    flex-direction: column;
-   
+.card-medium {
+  /*  set width roughly same as width of image */
+  width: 180px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
-.image-card-size-medium{
-   
-    width:150px;  
-    
+.image-card-size-medium {
+  width: 150px;
 }
-.card-medium-showSimilar-section{
-    width:180px;
-    border:2px solid var(--secondary-color);
-    padding:0.5em  ;
-    margin-bottom: 2rem;
+.card-medium-showSimilar-section {
+  width: 180px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
+  margin-bottom: 2rem;
 }
-.overlay-text-on-medium-card{
-    position:absolute;
-    /* use top bottom left right as per requirement */
-    width:170px;;   
+.overlay-text-on-medium-card {
+  position: absolute;
+  /* use top bottom left right as per requirement */
+  width: 170px;
 }
 
 /**********************************/
 
-.card-large{
-    /*  set width roughly same as width of image */
-    width:300px;
-    border: 2px solid var(--secondary-color);
-    padding:0.5em;
-    display: flex;
-    flex-direction: column;
-   
+.card-large {
+  /*  set width roughly same as width of image */
+  width: 300px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
-.image-card-size-large{
-    width:250px;
-    
+.image-card-size-large {
+  width: 250px;
 }
-.card-large-showSimilar-section{
-    width:300px;
-    border:2px solid var(--secondary-color);
-    padding:0.5em;
-    
+.card-large-showSimilar-section {
+  width: 300px;
+  border: 2px solid var(--secondary-color);
+  padding: 0.5em;
 }
-.overlay-text-on-large-card{
-    position:absolute;
-    /* use top bottom left right as per requirement */
-    width:290px;   
+.overlay-text-on-large-card {
+  position: absolute;
+  /* use top bottom left right as per requirement */
+  width: 290px;
 }
 /**********************************/
 
-.card-content{
-    display:flex;
-    flex-direction:column;
-    text-align: center;
-    align-items: center;
-   
+.card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
-
-.card-remove-btn{    
-    width:fit-content;
-    height:fit-content;
-    border-radius:1rem;;
-    background-color: transparent;
-    font-size:18px;
-    border: 2px solid var(--secondary-color);
-    color:var(--secondary-color);
-    margin:0.3em;
-    z-index:99;
-    position: relative;
-    left:9.5rem;
-    
+.card-remove-btn {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+  background-color: transparent;
+  font-size: 18px;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  margin: 0.3em;
+  z-index: 99;
+  position: relative;
+  left: 9.5rem;
 }
-.card-remove-btn:hover{
-    color:red;
+.card-remove-btn:hover {
+  color: red;
 }
 
-
-
-.text-utility-p-padding{
-    padding: 0.1em 0.5em;
-    
+.text-utility-p-padding {
+  padding: 0.1em 0.5em;
 }
 
-.vertical-card{
-    width:280px;
-    height:380px;
+.vertical-card {
+  width: 280px;
+  height: 380px;
 }
 
-.horizontal-card{
-    width:500px;
-    height:200px;
+.horizontal-card {
+  width: 500px;
+  height: 200px;
 }
 
-.apply-shadow{
-    /* background: #f0f0f0; */
-    box-shadow: 12px 4px 12px 4px rgba(0,0,0,0.2);
+.apply-shadow {
+  /* background: #f0f0f0; */
+  box-shadow: 12px 4px 12px 4px rgba(0, 0, 0, 0.2);
 }
 
-.product-display-list-container{
-    display:flex;
-    flex-wrap:wrap;
-    margin:1rem;
-    flex-direction: row;
-    
-    width:fit-content;
+.product-display-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  flex-direction: row;
+
+  width: fit-content;
 }
 
-.product-item-display{
-    margin:5rem 0.5rem;
-    display:flex;
-    padding:1rem;
-    
+.product-item-display {
+  margin: 5rem 0.5rem;
+  display: flex;
+  padding: 1rem;
 }
 
-.product-detail-card{
-    border:3px solid var(--secondary-color);
-    margin:1rem;
-    padding:1rem;
-    width:fit-content;
-    height:fit-content;
+.product-detail-card {
+  border: 3px solid var(--secondary-color);
+  margin: 1rem;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
 }
 
-.product-detail-header{
-    margin:1.5rem;
-    display: flex;
-    justify-content: space-between;
+.product-detail-header {
+  margin: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.product-detail-description-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
+.product-detail-description-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.product-detail-image-section{
-    width:50%;
-    
+.product-detail-image-section {
+  width: 50%;
 }
-.product-detail-image-container{
-    width:inherit;
-  
-    
+.product-detail-image-container {
+  width: inherit;
 }
-.product-description-section{
-    width:50%;
-    text-align: left;
-  
+.product-description-section {
+  width: 50%;
+  text-align: left;
 }
-.product-detail-section-divider{
-    color: var(--secondary-color);
+.product-detail-section-divider {
+  color: var(--secondary-color);
 }
-

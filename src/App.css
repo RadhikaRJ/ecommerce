@@ -1,13 +1,10 @@
 .App {
   text-align: center;
-  --primary-color: #F9FAFB;
+  --primary-color: #f9fafb;
   --secondary-color: #831843;
-  --tertiary-color: #7F1D1D;
+  --tertiary-color: #7f1d1d;
   --current-selected-color: white;
-  font-family: 'Gabriela', serif;
+  font-family: "Gabriela", serif;
 
-  color:var(--secondary-color);
+  color: var(--secondary-color);
 }
-
-
-
