@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { CartContextProvider } from "./context/cartcontext";
 import { AuthContextProvider } from "./context/authcontext";
 import { FilterContextProvider } from "./context/filtercontext";
+import DataContextProvider from "./context/datacontext";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.render(
       <AuthContextProvider>
         <CartContextProvider>
           <FilterContextProvider>
-            <App />
+            <DataContextProvider>
+              <App />
+            </DataContextProvider>
           </FilterContextProvider>
         </CartContextProvider>
       </AuthContextProvider>

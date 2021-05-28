@@ -12,16 +12,10 @@ import { useEffect, useState } from "react";
 import FilterMenu from "../displayComponents/filterMenu/filterMenu";
 
 import axios from "axios";
+import { useDataContext } from "../context/datacontext";
 
 function ProductList() {
-  const [productData, setProductData] = useState([]);
-  useEffect(() => {
-    (async function () {
-      const response = await axios
-        .get("http://127.0.0.1:3000/product")
-        .then((response) => setProductData(response.data.product));
-    })();
-  }, [productData]);
+  const productData = useDataContext();
 
   const { sortBy, showFastDeliveryOnly, showAllInventory, filterDispatch } =
     useFilterContext();
@@ -63,6 +57,7 @@ function ProductList() {
       showFastDeliveryOnly,
       showAllInventory,
     });
+
   const dataFilteredbyPrice = getDataFilteredByPriceRange(
     dataFilteredByAvailabilityStockPrice,
     priceRange
@@ -108,7 +103,7 @@ function ProductList() {
                     <ButtonAddToCart item={item} />{" "}
                     <button class="btn-text btn-style-color ">
                       <Link
-                        to={`/products/${item.id}`}
+                        to={`/products/${item._id}`}
                         class="btn-style-color link-btn"
                       >
                         View Details
