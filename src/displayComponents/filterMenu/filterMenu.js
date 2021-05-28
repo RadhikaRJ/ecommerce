@@ -92,7 +92,7 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
                 for="pricerange"
                 type="range"
                 min="0"
-                max="1000"
+                max="3000"
                 onChange={(e) => {
                   setPriceRange(e.target.value);
                 }}

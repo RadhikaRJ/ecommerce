@@ -166,3 +166,7 @@
 .product-detail-section-divider {
   color: var(--secondary-color);
 }
+
+.image-size-setter {
+  width: 150px;
+}
