@@ -1,0 +1,23 @@
+::placeholder {
+  color: var(--secondary-color);
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-sizing: border-box;
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+.userLoginForm-container {
+  padding: 1rem;
+  border: 1px solid var(--secondary-color);
+  width: 475px;
+  margin: 0 auto;
+}
+
+.userLoginForm-container > label {
+  font-weight: bold;
+}

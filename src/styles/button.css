@@ -1,0 +1,148 @@
+.btn {
+  padding: 0.5em 1em;
+}
+
+.btn-round-edges {
+  border-radius: 1em;
+  padding: 0.5em 1.5em;
+}
+
+.link-btn {
+  text-decoration: none;
+
+  color: var(--primary-color);
+  padding: 0.5em;
+}
+
+.btn-text {
+  padding: 0.5em 1em;
+
+  border: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/*
+***************************************************
+CSS Button Classes for size Large & Small
+***************************************************
+*/
+
+.btn-size-largest {
+  padding: 0.5em 1em;
+
+  font-size: x-large;
+}
+.btn-size-large {
+  padding: 0.5em 1em;
+
+  font-size: large;
+}
+
+.btn-size-small {
+  padding: 0.5em 1em;
+
+  font-size: x-small;
+}
+
+/*
+***************************************************
+CSS ICON Button Classes for size Large & Small
+***************************************************
+*/
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/**/
+.position-along {
+  position: relative;
+  top: 0.3em;
+  margin: 0 0 0 0.35em;
+}
+.btn-icon,
+.btn-floating-action-bottom-right,
+.btn-floating-action-bottom-left,
+.btn-floating-action-top-right,
+.btn-floating-action-top-left {
+  padding: 0.5em;
+  margin: 0.5em;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+}
+
+.btn-floating-action-bottom-right {
+  position: fixed;
+  bottom: 7em;
+  right: 10em;
+  z-index: 9999;
+}
+.btn-floating-action-bottom-left {
+  position: fixed;
+  bottom: 7em;
+  left: 10em;
+  z-index: 9999;
+}
+.btn-floating-action-top-right {
+  position: fixed;
+  top: 7em;
+  right: 10em;
+  z-index: 9999;
+}
+.btn-floating-action-top-left {
+  position: fixed;
+  top: 7em;
+  left: 10em;
+  z-index: 9999;
+}
+.btn-style-color {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.btn-wishListed {
+  padding: 0;
+  margin: 0.2rem;
+  position: relative;
+  left: 1rem;
+}
+.btn-quantity {
+  font-size: 20px;
+  border: 1px solid red;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 0 0.5rem;
+  margin: 0.25rem 1rem;
+}
+
+.btn-quantity-container {
+  border: 2px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  padding: 0rem 0rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  width: fit-content;
+}
+.btn-quantity-container > button {
+  padding: 0rem 0.5rem;
+  margin: 0.25rem;
+}
+.btn-quantity-container > span {
+  padding: 0.5rem;
+  margin: 0 auto;
+}
+.btn-for-quantity {
+  align-items: center;
+}
