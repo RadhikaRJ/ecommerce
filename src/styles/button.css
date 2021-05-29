@@ -80,7 +80,7 @@ CSS ICON Button Classes for size Large & Small
   height: fit-content;
   background-color: transparent;
   border: none;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .btn-floating-action-bottom-right {

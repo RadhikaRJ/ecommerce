@@ -27,7 +27,7 @@ function WishListdisplay() {
       <div className="product-display-list-container">
         {state.wishList.map((item) => {
           return (
-            <div className="product-item-display " key={item.id}>
+            <div className="product-item-display " key={item._id}>
               <div class="card-container">
                 <div class="card-large">
                   <button
@@ -40,18 +40,18 @@ function WishListdisplay() {
                   </button>
                   <div class="card-content">
                     <img
-                      class="image-card-size-large"
-                      src={item.image}
+                      class="image-card-size-large image-size-setter"
+                      src={item.url}
                       width="100%"
                       height="auto"
-                      alt={item.productName}
+                      alt={item.name}
                     />
                     <h3> {item.name} </h3>
                     <div>Rs. {item.price}</div>
-                    {item.inStock && <div> In Stock </div>}
-                    {!item.inStock && <div> Out of Stock </div>}
-                    <div>{item.level}</div>
-                    {item.fastDelivery ? (
+                    {item.availability && <div> In Stock </div>}
+                    {!item.availability && <div> Out of Stock </div>}
+
+                    {item.fast_delivery ? (
                       <div> Fast Delivery </div>
                     ) : (
                       <div> 3 days minimum </div>
@@ -63,7 +63,7 @@ function WishListdisplay() {
                   <ButtonAddToCart item={item} />{" "}
                   <button class="btn-text btn-style-color ">
                     <Link
-                      to={`/products/${item.id}`}
+                      to={`/products/${item._id}`}
                       class="btn-style-color link-btn"
                     >
                       View Details

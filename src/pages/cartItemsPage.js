@@ -36,7 +36,7 @@ function Cartdisplay() {
           <div className="product-display-list-container cart-items-section">
             {cart.map((item) => {
               return (
-                <div className="product-item-display" key={item.id}>
+                <div className="product-item-display" key={item._id}>
                   <div class="card-container">
                     <div class="card-medium">
                       <button
@@ -49,18 +49,18 @@ function Cartdisplay() {
                       </button>
                       <div class="card-content">
                         <img
-                          class="image-card-size-medium"
-                          src={item.image}
+                          class="image-card-size-medium image-size-setter"
+                          src={item.url}
                           width="100%"
                           height="auto"
-                          alt={item.productName}
+                          alt={item.name}
                         />
                         <h3> {item.name} </h3>
                         <div>Rs. {item.price}</div>
-                        {item.inStock && <div> In Stock </div>}
-                        {!item.inStock && <div> Out of Stock </div>}
+                        {item.availability && <div> In Stock </div>}
+                        {!item.availability && <div> Out of Stock </div>}
                         <div>{item.level}</div>
-                        {item.fastDelivery ? (
+                        {item.fast_delivery ? (
                           <div> Fast Delivery </div>
                         ) : (
                           <div> 3 days minimum </div>
