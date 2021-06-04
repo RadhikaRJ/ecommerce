@@ -32,7 +32,7 @@ function Navigation() {
             </NavLink>
           </li>
           <li class="list-item-inline">
-            <NavLink to="/cart" class="link">
+            <NavLink to="/user" class="link">
               <span class="material-icons">account_circle</span>
             </NavLink>
           </li>
