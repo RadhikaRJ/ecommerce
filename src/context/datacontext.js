@@ -8,8 +8,8 @@ export function DataContextProvider({ children }) {
   useEffect(() => {
     (async function () {
       const response = await axios
-        .get("http://127.0.0.1:3000/product")
-        .then((response) => setProductData(response.data.product));
+        .get("http://127.0.0.1:3000/product/")
+        .then((response) => setProductData(response.data.products));
     })();
   }, [productData]);
 

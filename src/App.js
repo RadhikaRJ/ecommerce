@@ -10,6 +10,7 @@ import WishListdisplay from "./pages/wishlistedItemsPage";
 import PrivateRoute from "./PrivateRoute";
 import Loginpage from "./pages/login";
 import ProductDetails from "./pages/productDetails";
+
 function App() {
   return (
     <div className="App">
