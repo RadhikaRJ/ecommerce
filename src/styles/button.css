@@ -112,6 +112,10 @@ CSS ICON Button Classes for size Large & Small
   background-color: var(--secondary-color);
 }
 
+.btn-reverse-style-color {
+  color: white;
+  background-color: var(--primary-color);
+}
 .btn-wishListed {
   padding: 0;
   margin: 0.2rem;

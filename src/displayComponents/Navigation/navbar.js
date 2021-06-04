@@ -31,6 +31,11 @@ function Navigation() {
               <span class="material-icons">login</span>
             </NavLink>
           </li>
+          <li class="list-item-inline">
+            <NavLink to="/cart" class="link">
+              <span class="material-icons">account_circle</span>
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

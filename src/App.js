@@ -10,6 +10,7 @@ import WishListdisplay from "./pages/wishlistedItemsPage";
 import PrivateRoute from "./PrivateRoute";
 import Loginpage from "./pages/login";
 import ProductDetails from "./pages/productDetails";
+import UserRegistration from "./pages/userRegistration";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route exact path="/cart" element={<Cartdisplay />} />
         <Route exact path="/wishlist" element={<WishListdisplay />} />
         <PrivateRoute exact path="/checkout" element={<Checkout />} />
-        <Route exact path="/login" element={<Loginpage />} />
+        <Route exact path="/login" element={<UserRegistration />} />
         <Route exact path="/products/:productId" element={<ProductDetails />} />
       </Routes>
 
