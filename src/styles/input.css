@@ -2,15 +2,6 @@
   color: var(--secondary-color);
 }
 
-input[type="text"],
-input[type="password"] {
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-  box-sizing: border-box;
-  margin: 0.5rem;
-  padding: 0.25rem;
-}
-
 .userLoginForm-container {
   padding: 1rem;
   border: 1px solid var(--secondary-color);
@@ -20,4 +11,18 @@ input[type="password"] {
 
 .userLoginForm-container > label {
   font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"] {
+  padding: 0.5rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 0.45rem;
+  box-shadow: 1px 1px 5px 5px var(--secondary-color);
+  width: 100%;
+  text-align: center;
 }

@@ -13,3 +13,6 @@
 /*orange: primary: #b8390e secondary:#ffcd58*/
 /*second orange combination alternative primary:#dc2f02 secondary:#ffba08*/
 /*green & Blue combination primary:#1e6091 secondary:#b5e48c*/
+* {
+  box-sizing: border-box;
+}

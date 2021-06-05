@@ -1,4 +1,5 @@
 import "../styles/userRegistration.css";
+import "../styles/input.css";
 import "../styles/button.css";
 import { useState } from "react";
 function UserRegistration() {

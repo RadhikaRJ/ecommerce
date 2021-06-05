@@ -2,7 +2,7 @@
   border: 2px solid var(--primary-color);
   border-radius: 0.25rem;
   padding: 1rem;
-  margin: 0.5rem;
+
   color: var(--primary-color);
   width: fit-content;
   margin: 0 auto;
@@ -28,26 +28,4 @@ input::placeholder {
 }
 .user-registration-container > hr {
   border-top: 1px solid var(--secondary-color);
-}
-
-input,
-input[type="email"],
-input[type="password"] {
-  caret-color: var(--primary-color);
-  border-color: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  letter-spacing: 1px;
-  text-align: center;
-  width: 100%;
-  margin: 0.25rem;
-}
-
-input[type="password"],
-input[type="email"] {
-  width: 100%;
-  padding: 0.25rem;
-}
-
-button {
-  margin-top: 1.5rem;
 }
