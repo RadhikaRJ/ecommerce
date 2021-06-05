@@ -1,6 +1,6 @@
 import "../../styles/user-details.css";
 import userDetailSideImage from "../../images/user-detail-side-image.jpg";
-import userDetailSideImage2 from "../../images/user-side-image-2.jpg";
+
 import "../../styles/input.css";
 import "../../styles/button.css";
 
@@ -155,6 +155,9 @@ function UserDetails() {
                   </div>
                 </div>
               </div>
+              <button className="btn btn-text btn-reverse-style-color btn-round-edges btn-size-large">
+                Update
+              </button>
             </form>
           </div>
         </div>
