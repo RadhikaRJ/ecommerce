@@ -12,6 +12,7 @@ import Loginpage from "./pages/login";
 import ProductDetails from "./pages/productDetails";
 import UserRegistration from "./pages/userRegistration";
 import UserDetails from "./pages/private/userDetails";
+import LoginPage from "./pages/loginPage";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route exact path="/products" element={<ProductList />} />
         <Route exact path="/cart" element={<Cartdisplay />} />
         <Route exact path="/wishlist" element={<WishListdisplay />} />
-        <Route exact path="/login" element={<UserRegistration />} />
+        <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/products/:productId" element={<ProductDetails />} />
         <PrivateRoute exact path="/checkout" element={<Checkout />} />
         <Route exact path="/user" element={<UserDetails />} />
