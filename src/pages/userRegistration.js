@@ -1,11 +1,14 @@
 import "../styles/userRegistration.css";
 import "../styles/input.css";
 import "../styles/button.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
+import { useNavigate, Navigate } from "react-router-dom";
+import { TOGGLE_FAST_DELIVERY } from "../constants/constants";
+import { toast } from "react-toastify";
 
 function UserRegistration() {
-  const [registrationStatus, setRegistrationStatus] = useState(false);
+  const navigate = useNavigate();
 
   const [userRegistrationCreds, setUserRegistrationCreds] = useState({
     email: "",
@@ -17,16 +20,21 @@ function UserRegistration() {
   const [passwords, setPasswords] = useState({ p1: "", p2: "" });
 
   async function registerNewUSer(data) {
-    const response = await axios.post(
-      "http://localhost:3000/user/register",
-      data,
-      {
-        headers: { "content-type": "application/json" },
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/register",
+        data,
+        {
+          headers: { "content-type": "application/json" },
+        }
+      );
+      if (response.data.status) {
+        navigate("/login");
+        toast.success("You are successfully registered! Login to continue.");
       }
-    );
-
-    if (response.data.success) {
-      setRegistrationStatus(true);
+    } catch (error) {
+      console.log(error);
+      toast.error("Registration failed. Please try again.");
     }
   }
 
@@ -46,7 +54,9 @@ function UserRegistration() {
 
   return (
     <div>
-      {!registrationStatus && (
+      {localStorage.getItem("TOKEN") ? (
+        <Navigate to="/products" />
+      ) : (
         <form>
           <label>
             <input
@@ -108,14 +118,6 @@ function UserRegistration() {
             Register!
           </button>
         </form>
-      )}
-      {registrationStatus && (
-        <div>
-          <h2>
-            You are now a registered member! Login with your credentials to
-            continue.
-          </h2>
-        </div>
       )}
     </div>
   );

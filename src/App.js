@@ -8,11 +8,12 @@ import Homepage from "./pages/homepage";
 import Cartdisplay from "./pages/cartItemsPage";
 import WishListdisplay from "./pages/wishlistedItemsPage";
 import PrivateRoute from "./PrivateRoute";
-import Loginpage from "./pages/login";
-import ProductDetails from "./pages/productDetails";
-import UserRegistration from "./pages/userRegistration";
-import UserDetails from "./pages/private/userDetails";
 import LoginPage from "./pages/loginPage";
+import ProductDetails from "./pages/productDetails";
+import UserDetails from "./pages/private/userDetails";
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -29,7 +30,17 @@ function App() {
         <PrivateRoute exact path="/checkout" element={<Checkout />} />
         <Route exact path="/user" element={<UserDetails />} />
       </Routes>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Footer />
     </div>
   );

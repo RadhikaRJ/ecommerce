@@ -1,39 +1,53 @@
 import "../styles/userRegistration.css";
 import "../styles/input.css";
 import "../styles/button.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
+import { useAuth } from "../context/authcontext";
+import { LOG_IN } from "../constants/constants";
+import { useNavigate, Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function UserLogin() {
-  const [loginStatus, setLoginStatus] = useState(false);
+  const navigate = useNavigate();
+
+  const { dispatch } = useAuth();
 
   const [userLoginCreds, setUserLoginCreds] = useState({
     email: "",
     password: "",
   });
 
-  function handleUserLogin() {
-    const data = JSON.stringify(userLoginCreds);
+  const handleUserLogin = async (e) => {
+    e.preventDefault();
+    loginRegisteredUser();
+  };
 
-    loginRegisteredUser(data);
-  }
-
-  async function loginRegisteredUser(data) {
-    const response = await axios
-      .post("http://localhost:3000/user/login", data, {
-        headers: { "content-type": "application/json" },
-      })
-      .then((response) => {
-        if (response.data.user) {
-          const val = response.data.user;
-          localStorage.setItem("TOKEN", val);
-          setLoginStatus(true);
+  async function loginRegisteredUser() {
+    const credentials = JSON.stringify(userLoginCreds);
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/login",
+        credentials,
+        {
+          headers: { "content-type": "application/json" },
         }
-      });
+      );
+
+      dispatch({ type: LOG_IN, payload: response.data.user });
+      navigate("/products");
+      toast.success("You are Successfully Logged In!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed! Please try again with valid credentials.");
+    }
   }
+
   return (
     <div>
-      {!loginStatus && (
+      {localStorage.getItem("TOKEN") ? (
+        <Navigate to="/products" />
+      ) : (
         <form>
           <label>
             <input
@@ -71,12 +85,6 @@ function UserLogin() {
             Log In!
           </button>
         </form>
-      )}
-      {loginStatus && (
-        <div>
-          {" "}
-          <h2>You are logged In!</h2>
-        </div>
       )}
     </div>
   );
