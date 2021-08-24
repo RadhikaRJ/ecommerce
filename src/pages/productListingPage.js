@@ -84,7 +84,7 @@ function ProductList() {
 
   const { sortBy, showFastDeliveryOnly, showAllInventory, filterDispatch } =
     useFilterContext();
-  const [priceRange, setPriceRange] = useState(250);
+  const [priceRange, setPriceRange] = useState(3000);
 
   function getDataSortedByPrice(productDataList, sortBy) {
     if (sortBy && sortBy === PRICE_LOW_TO_HIGH) {
