@@ -1,11 +1,11 @@
-import { useCartContext } from "../../context/cartcontext";
+import { useAuth } from "../../context/authcontext";
 import "../../styles/cartSummaryTable.css";
 
 function CartSummary() {
   function grandTotalCalculator(acc, value) {
-    return acc + value.price * value.quantity;
+    return acc + value.itemInCart_id.price * value.itemInCart_id.quantity;
   }
-  const { state } = useCartContext();
+  const { state } = useAuth();
   const grandTotalValue = state.cart.reduce(grandTotalCalculator, 0);
 
   return (
@@ -26,10 +26,12 @@ function CartSummary() {
               state.cart.map((item) => {
                 return (
                   <tr>
-                    <th>{item.name}</th>
-                    <th>{item.price}</th>
-                    <th>{item.quantity}</th>
-                    <th>{item.price * item.quantity}</th>
+                    <th>{item.itemInCart_id.name}</th>
+                    <th>{item.itemInCart_id.price}</th>
+                    <th>{item.itemInCart_id.quantity}</th>
+                    <th>
+                      {item.itemInCart_id.price * item.itemInCart_id.quantity}
+                    </th>
                   </tr>
                 );
               })}

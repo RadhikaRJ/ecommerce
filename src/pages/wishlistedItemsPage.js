@@ -1,4 +1,4 @@
-import { useCartContext } from "../context/cartcontext";
+import { useAuth } from "../context/authcontext";
 
 import "../styles/productCard.css";
 import "../styles/button.css";
@@ -6,11 +6,11 @@ import { REMOVE_FROM_WISHLIST } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import { Link, useNavigate } from "react-router-dom";
 function WishListdisplay() {
-  const { state, dispatch } = useCartContext();
+  const { state, dispatch } = useAuth();
   const navigate = useNavigate();
   return (
     <div>
-      {state.wishList.length === 0 ? (
+      {state.wishlist.length === 0 ? (
         <div>
           <h3>You don't have any items in your wish list</h3>
           <button
@@ -25,7 +25,7 @@ function WishListdisplay() {
       )}
 
       <div className="product-display-list-container">
-        {state.wishList.map((item) => {
+        {state.wishlist.map((item) => {
           return (
             <div className="product-item-display " key={item._id}>
               <div class="card-container">
@@ -41,17 +41,17 @@ function WishListdisplay() {
                   <div class="card-content">
                     <img
                       class="image-card-size-large image-size-setter"
-                      src={item.url}
+                      src={item.product_id.url}
                       width="100%"
                       height="auto"
-                      alt={item.name}
+                      alt={item.product_id.name}
                     />
-                    <h3> {item.name} </h3>
-                    <div>Rs. {item.price}</div>
-                    {item.availability && <div> In Stock </div>}
-                    {!item.availability && <div> Out of Stock </div>}
+                    <h3> {item.product_id.name} </h3>
+                    <div>Rs. {item.product_id.price}</div>
+                    {item.product_id.availability && <div> In Stock </div>}
+                    {!item.product_id.availability && <div> Out of Stock </div>}
 
-                    {item.fast_delivery ? (
+                    {item.product_id.fast_delivery ? (
                       <div> Fast Delivery </div>
                     ) : (
                       <div> 3 days minimum </div>
@@ -63,7 +63,7 @@ function WishListdisplay() {
                   <ButtonAddToCart item={item} />{" "}
                   <button class="btn-text btn-style-color ">
                     <Link
-                      to={`/products/${item._id}`}
+                      to={`/products/${item.product_id._id}`}
                       class="btn-style-color link-btn"
                     >
                       View Details

@@ -64,7 +64,7 @@ function ProductList() {
           if (response.data.success) {
             dispatch({
               type: SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
-              payload: response.data.cart_product_list,
+              payload: response.data.userCart.cart_product_list,
             });
             return response.data.cart_product_list;
           } else {

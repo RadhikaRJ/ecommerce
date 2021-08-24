@@ -8,7 +8,7 @@ import {
 function ButtonQuantityUpdate({ item }) {
   const { dispatch } = useCartContext();
 
-  const [itemQuantity, setItemQuantity] = useState(item.quantity);
+  const [itemQuantity, setItemQuantity] = useState(item.itemInCart_id.quantity);
 
   function decrementQuantityOfItem(item, itemQuantity) {
     if (itemQuantity > 1) {
