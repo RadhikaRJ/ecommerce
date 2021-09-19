@@ -14,15 +14,11 @@ function ProductDetails() {
   const [loading, setLoading] = useState(false);
 
   async function fetchProductData() {
-    setLoading(false);
     const response = await axios
       .get(`http://127.0.0.1:3000/product/${productId}`)
       .then((response) => {
         setProductDetail(response.data.product);
       });
-    if (response.data.success) {
-      setLoading(true);
-    }
   }
 
   useEffect(() => {
@@ -31,8 +27,8 @@ function ProductDetails() {
 
   return (
     <div>
-      {!loading && <h4>loading...</h4>}
-      {loading && (
+      {loading && <h4>loading...</h4>}
+      {!loading && (
         <div className="product-detail-card apply-shadow">
           <div className="product-detail-header">
             <h2>{productDetail.name}</h2>

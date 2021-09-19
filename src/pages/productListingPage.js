@@ -139,7 +139,7 @@ function ProductList() {
         {dataFilteredbyPrice &&
           dataFilteredbyPrice.map((item) => {
             return (
-              <div className="product-item-display " key={item.id}>
+              <div className="product-item-display " key={item._id}>
                 <div class="card-container ">
                   <div class="card-large ">
                     <ButtonAddToWishList item={item} />
