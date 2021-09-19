@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  --primary-color: #004d4a;
-  --secondary-color: #068467;
+  --primary-color: #b8390e;
+  --secondary-color: #ffcd58;
   --tertiary-color: #7f1d1d;
   --current-selected-color: white;
   font-family: "Gabriela", serif;
-  background-color: #f8fcf1;
+
   color: var(--primary-color);
 }
 /*secondary:#831843 primary:#f9fafb  alternate green color:#a5d46a;*/

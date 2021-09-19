@@ -2,7 +2,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: var(--secondary-color);
-  color: #f8fcf1;
+  color: var(--primary-color);
 }
 .list-non-bullet {
   list-style: none;
@@ -34,7 +34,7 @@
     margin-bottom: 1rem; */
 }
 li > a > span {
-  color: #f8fcf1;
+  color: var(--primary-color);
 }
 
 .active-page-style {
