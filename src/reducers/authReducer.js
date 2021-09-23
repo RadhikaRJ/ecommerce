@@ -8,6 +8,8 @@ import {
   FAILED_TO_FETCH_USER_WISHLIST_DATA,
   SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
   FAILED_TO_FETCH_USER_CART_ITEMS,
+  SET_LOADING_TO_TRUE,
+  SET_LOADING_TO_FALSE,
 } from "../constants/constants";
 
 export function authReducer(state, action) {
@@ -33,6 +35,10 @@ export function authReducer(state, action) {
       return { ...state, cart: payload };
     case FAILED_TO_FETCH_USER_CART_ITEMS:
       return { ...state, cart: [] };
+    case SET_LOADING_TO_TRUE:
+      return { ...state, loading: true };
+    case SET_LOADING_TO_FALSE:
+      return { ...state, loading: false };
     default:
       return state;
   }

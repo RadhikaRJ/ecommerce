@@ -5,6 +5,8 @@ import "../styles/button.css";
 import { REMOVE_FROM_WISHLIST } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 function WishListdisplay() {
   const { state, dispatch } = useAuth();
   const navigate = useNavigate();

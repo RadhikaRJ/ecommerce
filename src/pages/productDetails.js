@@ -1,24 +1,33 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDataContext } from "../context/datacontext";
-import { productData } from "../data/productData";
+import { useAuth } from "../context/authcontext";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import ButtonAddToWishList from "../displayComponents/wishListButton/wishListItem";
 import "../styles/productCard.css";
+import { toast } from "react-toastify";
 
 function ProductDetails() {
   let { productId } = useParams();
-  const productData = useDataContext();
+
   const [productDetail, setProductDetail] = useState([]);
-  const [loading, setLoading] = useState(false);
+  let { state, dispatch } = useAuth();
 
   async function fetchProductData() {
-    const response = await axios
-      .get(`http://127.0.0.1:3000/product/${productId}`)
-      .then((response) => {
-        setProductDetail(response.data.product);
-      });
+    dispatch({ type: "SET_LOADING_TO_TRUE" });
+    try {
+      const response = await axios
+        .get(`http://127.0.0.1:3000/product/${productId}`)
+        .then((response) => {
+          setProductDetail(response.data.product);
+        });
+      dispatch({ type: "SET_LOADING_TO_FALSE" });
+    } catch (error) {
+      toast.error("Failed to load");
+      console.log(error.message);
+    } finally {
+      dispatch({ type: "SET_LOADING_TO_FALSE" });
+    }
   }
 
   useEffect(() => {
@@ -27,8 +36,8 @@ function ProductDetails() {
 
   return (
     <div>
-      {loading && <h4>loading...</h4>}
-      {!loading && (
+      {state.loading && <h4>loading...</h4>}
+      {!state.loading && (
         <div className="product-detail-card apply-shadow">
           <div className="product-detail-header">
             <h2>{productDetail.name}</h2>

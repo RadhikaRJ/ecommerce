@@ -1,3 +1,6 @@
+export const SET_LOADING_TO_TRUE = "SET_LOADING_TO_TRUE";
+export const SET_LOADING_TO_FALSE = "SET_LOADING_TO_FALSE";
+
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
