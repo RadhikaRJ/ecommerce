@@ -14,10 +14,10 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
         <div className="filter-sub-section-containers apply-shadow">
           <h4>Availability</h4>
 
-          <div classname="filter-options-container">
+          <div className="filter-options-container">
             <div className="filter-input-section">
               <input
-                for="instock"
+                htmlFor="instock"
                 type="checkbox"
                 name="availabilityfilter"
                 onChange={() => {
@@ -32,10 +32,10 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
         <div className="filter-sub-section-containers apply-shadow">
           <h4>Delivery</h4>
 
-          <div classname="filter-options-container">
+          <div className="filter-options-container">
             <div className="filter-input-section">
               <input
-                for="fastdelivery"
+                htmlFor="fastdelivery"
                 type="checkbox"
                 name="delivery"
                 onChange={() => {
@@ -50,10 +50,10 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
         <div className="filter-sub-section-containers apply-shadow">
           <h4>Sort by Price</h4>
 
-          <div classname="filter-options-container">
+          <div className="filter-options-container">
             <div className="filter-input-section">
               <input
-                for="lowtohighprice"
+                htmlFor="lowtohighprice"
                 type="radio"
                 name="sortbyprice"
                 onChange={() => {
@@ -68,7 +68,7 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
 
             <div className="filter-input-section">
               <input
-                for="hightolow"
+                htmlFor="hightolow"
                 type="radio"
                 name="sortbyprice"
                 onChange={() => {
@@ -86,10 +86,10 @@ function FilterMenu({ setPriceRange, filterDispatch, priceRange }) {
         <div className="filter-sub-section-containers apply-shadow">
           <h4>Price Range</h4>
 
-          <div classname="filter-options-container">
+          <div className="filter-options-container">
             <div className="filter-input-section">
               <input
-                for="pricerange"
+                htmlFor="pricerange"
                 type="range"
                 min="0"
                 max="3000"

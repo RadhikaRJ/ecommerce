@@ -140,13 +140,13 @@ function ProductList() {
           dataFilteredbyPrice.map((item) => {
             return (
               <div className="product-item-display " key={item._id}>
-                <div class="card-container ">
-                  <div class="card-large ">
+                <div className="card-container ">
+                  <div className="card-large ">
                     <ButtonAddToWishList item={item} />
 
-                    <div class="card-content ">
+                    <div className="card-content ">
                       <img
-                        class="image-card-size-large image-size-setter"
+                        className="image-card-size-large image-size-setter"
                         src={item.url}
                         width="100%"
                         height="auto"
@@ -164,12 +164,12 @@ function ProductList() {
                       )}
                     </div>
                   </div>
-                  <div class="card-large-showSimilar-section ">
+                  <div className="card-large-showSimilar-section ">
                     <ButtonAddToCart item={item} />{" "}
-                    <button class="btn-text btn-style-color ">
+                    <button className="btn-text btn-style-color ">
                       <Link
                         to={`/products/${item._id}`}
-                        class="btn-style-color link-btn"
+                        className="btn-style-color link-btn"
                       >
                         View Details
                       </Link>

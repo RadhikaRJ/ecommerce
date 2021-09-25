@@ -48,7 +48,7 @@ function ProductDetails() {
           </div>
 
           <div className="product-detail-description-container">
-            <div classname="product-detail-image-section">
+            <div className="product-detail-image-section">
               <img
                 src={productDetail.url}
                 className="product-detail-image-container"

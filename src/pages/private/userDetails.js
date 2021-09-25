@@ -16,7 +16,7 @@ function UserDetails() {
         <div className="user-details-section-container">
           <h2>
             {" "}
-            <span class="material-icons span-space">info</span>User Details
+            <span className="material-icons span-space">info</span>User Details
           </h2>
 
           <div className="form-container">
@@ -24,7 +24,7 @@ function UserDetails() {
               <div className="details-with-icon-container">
                 <div>
                   {" "}
-                  <span class="material-icons md-24 adjust-icon span-space">
+                  <span className="material-icons md-24 adjust-icon span-space">
                     face
                   </span>
                 </div>
@@ -37,7 +37,7 @@ function UserDetails() {
               <div className="details-with-icon-container">
                 <div>
                   {" "}
-                  <span class="material-icons md-24 adjust-icon span-space">
+                  <span className="material-icons md-24 adjust-icon span-space">
                     badge
                   </span>
                 </div>
@@ -55,7 +55,7 @@ function UserDetails() {
                   <div className="input-icon-horizontal-placement">
                     <div>
                       {" "}
-                      <span class="material-icons md-24 adjust-icon span-space">
+                      <span className="material-icons md-24 adjust-icon span-space">
                         email
                       </span>
                     </div>
@@ -91,7 +91,7 @@ function UserDetails() {
                   <div className="input-icon-horizontal-placement">
                     <div>
                       {" "}
-                      <span class="material-icons md-24 adjust-icon span-space">
+                      <span className="material-icons md-24 adjust-icon span-space">
                         flag
                       </span>
                     </div>
@@ -105,7 +105,7 @@ function UserDetails() {
                   <div className="input-icon-horizontal-placement">
                     <div>
                       {" "}
-                      <span class="material-icons md-24 adjust-icon span-space">
+                      <span className="material-icons md-24 adjust-icon span-space">
                         location_city
                       </span>
                     </div>
@@ -123,7 +123,7 @@ function UserDetails() {
                   <div className="input-icon-horizontal-placement">
                     <div>
                       {" "}
-                      <span class="material-icons md-24 adjust-icon span-space">
+                      <span className="material-icons md-24 adjust-icon span-space">
                         area_chart
                       </span>
                     </div>
@@ -138,7 +138,7 @@ function UserDetails() {
                   <div className="input-icon-horizontal-placement">
                     <div>
                       {" "}
-                      <span class="material-icons md-24 adjust-icon span-space">
+                      <span className="material-icons md-24 adjust-icon span-space">
                         room
                       </span>
                     </div>

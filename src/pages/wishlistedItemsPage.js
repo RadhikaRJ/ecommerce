@@ -18,7 +18,7 @@ function WishListdisplay() {
             <div>
               <h3>You don't have any items in your wish list</h3>
               <button
-                class="btn-text btn-style-color"
+                className="btn-text btn-style-color"
                 onClick={() => navigate("/products")}
               >
                 Go back to view products
@@ -32,19 +32,19 @@ function WishListdisplay() {
             {state.wishlist.map((item) => {
               return (
                 <div className="product-item-display " key={item._id}>
-                  <div class="card-container">
-                    <div class="card-large">
+                  <div className="card-container">
+                    <div className="card-large">
                       <button
-                        class="card-remove-btn"
+                        className="card-remove-btn"
                         onClick={() =>
                           dispatch({ type: REMOVE_FROM_WISHLIST, item })
                         }
                       >
                         &times;
                       </button>
-                      <div class="card-content">
+                      <div className="card-content">
                         <img
-                          class="image-card-size-large image-size-setter"
+                          className="image-card-size-large image-size-setter"
                           src={item.product_id.url}
                           width="100%"
                           height="auto"
@@ -65,12 +65,12 @@ function WishListdisplay() {
                       </div>
                     </div>
 
-                    <div class="card-large-showSimilar-section">
+                    <div className="card-large-showSimilar-section">
                       <ButtonAddToCart item={item} />{" "}
                       <button class="btn-text btn-style-color ">
                         <Link
                           to={`/products/${item.product_id._id}`}
-                          class="btn-style-color link-btn"
+                          className="btn-style-color link-btn"
                         >
                           View Details
                         </Link>

@@ -13,7 +13,7 @@ function ButtonAddToWishList({ item }) {
         dispatch({ type: ADD_TO_WISHLIST, item });
       }}
     >
-      <span class="material-icons-outlined">
+      <span className="material-icons-outlined">
         {isWishListedStatus ? "favorite" : "favorite_border"}
       </span>{" "}
     </button>

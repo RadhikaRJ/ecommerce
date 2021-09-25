@@ -10,6 +10,8 @@ import {
   FAILED_TO_FETCH_USER_CART_ITEMS,
   SET_LOADING_TO_TRUE,
   SET_LOADING_TO_FALSE,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
 } from "../constants/constants";
 
 export function authReducer(state, action) {
@@ -39,6 +41,7 @@ export function authReducer(state, action) {
       return { ...state, loading: true };
     case SET_LOADING_TO_FALSE:
       return { ...state, loading: false };
+
     default:
       return state;
   }

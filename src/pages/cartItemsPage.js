@@ -21,14 +21,14 @@ function Cartdisplay() {
           )}
           {(state.cart.length !== 0 && (
             <button
-              class="btn-text btn-style-color"
+              className="btn-text btn-style-color"
               onClick={() => navigate("/checkout")}
             >
               Checkout
             </button>
           )) || (
             <button
-              class="btn-text btn-style-color"
+              className="btn-text btn-style-color"
               onClick={() => navigate("/products")}
             >
               Go back to view products
@@ -41,19 +41,19 @@ function Cartdisplay() {
                 {state.cart.map((item) => {
                   return (
                     <div className="product-item-display" key={item._id}>
-                      <div class="card-container">
-                        <div class="card-medium">
+                      <div className="card-container">
+                        <div className="card-medium">
                           <button
-                            class="card-remove-btn"
+                            className="card-remove-btn"
                             onClick={() =>
                               dispatch({ type: REMOVE_FROM_CART, item })
                             }
                           >
                             &times;
                           </button>
-                          <div class="card-content">
+                          <div className="card-content">
                             <img
-                              class="image-card-size-medium image-size-setter"
+                              className="image-card-size-medium image-size-setter"
                               src={item.itemInCart_id.url}
                               width="100%"
                               height="auto"
