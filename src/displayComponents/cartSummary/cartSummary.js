@@ -25,7 +25,7 @@ function CartSummary() {
             {state.cart.length !== 0 &&
               state.cart.map((item) => {
                 return (
-                  <tr>
+                  <tr key={item.itemInCart_id._id}>
                     <th>{item.itemInCart_id.name}</th>
                     <th>{item.itemInCart_id.price}</th>
                     <th>{item.itemInCart_id.quantity}</th>
@@ -38,7 +38,7 @@ function CartSummary() {
           </tbody>
           <tfoot>
             <tr>
-              <th colspan="3">Grand Total:</th>
+              <th colSpan="3">Grand Total:</th>
               <th className="cart-grand-total-amount">
                 Rs. {grandTotalValue}/-{" "}
               </th>

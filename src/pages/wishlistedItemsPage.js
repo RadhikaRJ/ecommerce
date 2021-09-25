@@ -31,7 +31,10 @@ function WishListdisplay() {
           <div className="product-display-list-container">
             {state.wishlist.map((item) => {
               return (
-                <div className="product-item-display " key={item._id}>
+                <div
+                  className="product-item-display "
+                  key={item.product_id._id}
+                >
                   <div className="card-container">
                     <div className="card-large">
                       <button
@@ -67,7 +70,7 @@ function WishListdisplay() {
 
                     <div className="card-large-showSimilar-section">
                       <ButtonAddToCart item={item} />{" "}
-                      <button class="btn-text btn-style-color ">
+                      <button className="btn-text btn-style-color ">
                         <Link
                           to={`/products/${item.product_id._id}`}
                           className="btn-style-color link-btn"

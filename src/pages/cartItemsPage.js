@@ -36,11 +36,13 @@ function Cartdisplay() {
           )}
           {state.cart.length !== 0 && (
             <div className="cart-container">
-              <div></div>
               <div className="product-display-list-container cart-items-section">
                 {state.cart.map((item) => {
                   return (
-                    <div className="product-item-display" key={item._id}>
+                    <div
+                      key={item.itemInCart_id._id}
+                      className="product-item-display"
+                    >
                       <div className="card-container">
                         <div className="card-medium">
                           <button
