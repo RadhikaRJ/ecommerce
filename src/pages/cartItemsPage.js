@@ -6,11 +6,45 @@ import { REMOVE_FROM_CART } from "../constants/constants";
 import CartSummary from "../displayComponents/cartSummary/cartSummary";
 import { useNavigate, Navigate } from "react-router-dom";
 import ButtonQuantityUpdate from "../displayComponents/buttonQuantityUpdate/buttonQuantityUpdate";
-
+import { retrieveToken } from "../utility/retrieveStoredToken";
+import axios from "axios";
+import { useEffect } from "react";
+import {
+  SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
+  FAILED_TO_FETCH_USER_CART_ITEMS,
+} from "../constants/constants";
 function Cartdisplay() {
   const { state, dispatch } = useAuth();
 
   const navigate = useNavigate();
+
+  const fetchUserCart = async () => {
+    const token = retrieveToken();
+
+    try {
+      const response = axios
+        .get("http://localhost:3000/cart/", { headers: token })
+        .then((response) => {
+          if (response.data.success) {
+            dispatch({
+              type: SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
+              payload: response.data.userCart.cart_product_list,
+            });
+            return response.data.cart_product_list;
+          } else {
+            dispatch({
+              type: FAILED_TO_FETCH_USER_CART_ITEMS,
+            });
+          }
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserCart();
+  }, []);
 
   return (
     <div>

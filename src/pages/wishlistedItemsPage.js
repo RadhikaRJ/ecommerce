@@ -5,11 +5,47 @@ import "../styles/button.css";
 import { REMOVE_FROM_WISHLIST } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-import { toast } from "react-toastify";
+
+import { retrieveToken } from "../utility/retrieveStoredToken";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import {
+  SUCCESSFULLY_FETCHED_USER_WISHLIST_DATA,
+  FAILED_TO_FETCH_USER_WISHLIST_DATA,
+} from "../constants/constants";
 
 function WishListdisplay() {
   const { state, dispatch } = useAuth();
   const navigate = useNavigate();
+
+  const fetchUserWishlistedProducts = async () => {
+    const token = retrieveToken();
+
+    try {
+      const response = axios
+        .get("http://localhost:3000/wishlist/", { headers: token })
+        .then((response) => {
+          if (response.data.success) {
+            dispatch({
+              type: SUCCESSFULLY_FETCHED_USER_WISHLIST_DATA,
+              payload: response.data.userWishlist.wishlist_product_list,
+            });
+            return response.data.userWishlist.wishlist_product_list;
+          } else {
+            dispatch({
+              type: FAILED_TO_FETCH_USER_WISHLIST_DATA,
+            });
+          }
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserWishlistedProducts();
+  }, []);
+
   return (
     <div>
       {localStorage.getItem("TOKEN") ? (

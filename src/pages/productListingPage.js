@@ -3,84 +3,18 @@ import "../styles/productCard.css";
 import "../styles/button.css";
 import "../styles/filters.css";
 
-import {
-  PRICE_HIGH_TO_LOW,
-  PRICE_LOW_TO_HIGH,
-  SUCCESSFULLY_FETCHED_USER_WISHLIST_DATA,
-  FAILED_TO_FETCH_USER_WISHLIST_DATA,
-  SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
-  FAILED_TO_FETCH_USER_CART_ITEMS,
-} from "../constants/constants";
+import { PRICE_HIGH_TO_LOW, PRICE_LOW_TO_HIGH } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import ButtonAddToWishList from "../displayComponents/wishListButton/wishListItem";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../context/filtercontext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FilterMenu from "../displayComponents/filterMenu/filterMenu";
-import { retrieveToken } from "../utility/retrieveStoredToken";
-import axios from "axios";
+
 import { useDataContext } from "../context/datacontext";
-import { useAuth } from "../context/authcontext";
 
 function ProductList() {
   const productData = useDataContext();
-  const { dispatch } = useAuth();
-
-  const fetchUserWishlistedProducts = async () => {
-    const token = retrieveToken();
-
-    try {
-      const response = axios
-        .get("http://localhost:3000/wishlist/", { headers: token })
-        .then((response) => {
-          if (response.data.success) {
-            dispatch({
-              type: SUCCESSFULLY_FETCHED_USER_WISHLIST_DATA,
-              payload: response.data.userWishlist.wishlist_product_list,
-            });
-            return response.data.userWishlist.wishlist_product_list;
-          } else {
-            dispatch({
-              type: FAILED_TO_FETCH_USER_WISHLIST_DATA,
-            });
-          }
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUserWishlistedProducts();
-  }, []);
-
-  const fetchUserCart = async () => {
-    const token = retrieveToken();
-
-    try {
-      const response = axios
-        .get("http://localhost:3000/cart/", { headers: token })
-        .then((response) => {
-          if (response.data.success) {
-            dispatch({
-              type: SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
-              payload: response.data.userCart.cart_product_list,
-            });
-            return response.data.cart_product_list;
-          } else {
-            dispatch({
-              type: FAILED_TO_FETCH_USER_CART_ITEMS,
-            });
-          }
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUserCart();
-  }, []);
 
   const { sortBy, showFastDeliveryOnly, showAllInventory, filterDispatch } =
     useFilterContext();

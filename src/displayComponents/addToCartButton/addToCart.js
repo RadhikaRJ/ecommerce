@@ -1,5 +1,5 @@
 import "../../styles/button.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../context/authcontext";
 import {
   SET_LOADING_TO_TRUE,
@@ -15,7 +15,7 @@ function ButtonAddToCart({ item }) {
   const [inCartStatus, setInCartStatus] = useState(false);
   const { dispatch } = useAuth();
 
-  function additionToCart() {
+  async function additionToCart() {
     const token = retrieveToken();
     console.log("token: " + token.authenticationToken);
 
@@ -23,7 +23,7 @@ function ButtonAddToCart({ item }) {
     dispatch({ type: SET_LOADING_TO_TRUE });
     setInCartStatus((inCartStatus) => !inCartStatus);
     try {
-      const response = axios.post(
+      const response = await axios.post(
         "http://localhost:3000/cart/",
 
         { itemInCart_id: item._id.toString(), itemInCart_quantity: 1 },
