@@ -105,7 +105,7 @@ function WishListdisplay() {
                     </div>
 
                     <div className="card-large-showSimilar-section">
-                      <ButtonAddToCart item={item} />{" "}
+                      <ButtonAddToCart item={item.product_id} />{" "}
                       <button className="btn-text btn-style-color ">
                         <Link
                           to={`/products/${item.product_id._id}`}

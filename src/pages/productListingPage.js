@@ -1,4 +1,3 @@
-//import { productData } from "../data/productData";
 import "../styles/productCard.css";
 import "../styles/button.css";
 import "../styles/filters.css";
