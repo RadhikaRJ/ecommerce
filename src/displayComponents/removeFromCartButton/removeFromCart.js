@@ -50,7 +50,7 @@ function ButtonRemoveFromCart({ item }) {
           }
         });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
   return (

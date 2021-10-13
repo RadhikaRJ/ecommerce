@@ -5,7 +5,7 @@ import "../styles/button.css";
 import { REMOVE_FROM_WISHLIST } from "../constants/constants";
 import ButtonAddToCart from "../displayComponents/addToCartButton/addToCart";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-
+import ButtonRemoveFromWishlist from "../displayComponents/removeFromWishlistButton/removeFromWishlist";
 import { retrieveToken } from "../utility/retrieveStoredToken";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -73,14 +73,7 @@ function WishListdisplay() {
                 >
                   <div className="card-container">
                     <div className="card-large">
-                      <button
-                        className="card-remove-btn"
-                        onClick={() =>
-                          dispatch({ type: REMOVE_FROM_WISHLIST, item })
-                        }
-                      >
-                        &times;
-                      </button>
+                      <ButtonRemoveFromWishlist item={item.product_id} />
                       <div className="card-content">
                         <img
                           className="image-card-size-large image-size-setter"
