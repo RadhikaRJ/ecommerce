@@ -13,6 +13,7 @@ import {
   SUCCESSFULLY_FETCHED_USER_CART_ITEMS,
   FAILED_TO_FETCH_USER_CART_ITEMS,
 } from "../constants/constants";
+import ButtonRemoveFromCart from "../displayComponents/removeFromCartButton/removeFromCart";
 function Cartdisplay() {
   const { state, dispatch } = useAuth();
 
@@ -79,14 +80,15 @@ function Cartdisplay() {
                     >
                       <div className="card-container">
                         <div className="card-medium">
-                          <button
+                          <ButtonRemoveFromCart item={item} />
+                          {/* <button
                             className="card-remove-btn"
                             onClick={() =>
                               dispatch({ type: REMOVE_FROM_CART, item })
                             }
                           >
                             &times;
-                          </button>
+                          </button> */}
                           <div className="card-content">
                             <img
                               className="image-card-size-medium image-size-setter"
